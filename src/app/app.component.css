@@ -1,0 +1,78 @@
+.tp-container {
+    position: absolute;
+    top: 80px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eee;
+ }
+ .tp-section {
+    /* display: flex; */
+    align-content: center;
+    align-items: center;
+    height: 60px;
+    width:180px;   
+ }
+
+
+ 
+ .tb-platform{
+    border: 13px;
+    color: #FFFFFF;
+    margin-left: 20px;
+ }
+ .tb-ril-logo{
+    height: 40px;
+    border: 13px;    
+ }
+ .tb-bg-color {
+background-color: #22297A;
+height: 55px;
+ }
+ /* .tp-form {
+    min-width: 150px;
+    max-width: 500px;
+
+ }
+ .tp-full-width {
+    width: 40%;
+    margin-left: 20px;
+ }
+ .filler {
+    flex: 1 1 auto;
+ } */
+
+ /* .col-sm-2{
+    background-color : aliceblue;
+    height: 600px;
+ } */
+ /* .row{
+    background-color: aliceblue
+ } */
+
+ 
+.text{
+   margin-left: 15px;
+} 
+/* .sb-menu{
+   background-color: aliceblue;
+} */
+
+.sb-expansion-data{
+   color: blue;
+   margin-left: 60px;
+}
+
+.fa{
+   margin-left: 10px;
+}
+
+.sb-text{
+   margin-left: 0PX;
+}
+.sb-plus-icon{
+   margin-left: 10px;
+}
+
+
+
