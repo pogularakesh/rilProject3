@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSidenavModule,MatToolbarModule,MatInputModule,MatMenuModule,MatButtonModule,MatExpansionModule,MatIconModule} from '@angular/material';
+import {MatSidenavModule,MatToolbarModule,MatInputModule,MatMenuModule,MatButtonModule,MatExpansionModule,MatIconModule,MatTableModule} from '@angular/material';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +23,9 @@ import { AppComponent } from './app.component';
     MatInputModule,
     MatSidenavModule,
     MatToolbarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]
