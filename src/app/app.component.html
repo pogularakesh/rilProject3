@@ -45,107 +45,96 @@
     <section class="tp-section">
 
       <ul class="navbar-nav mr-auto">
-        <!-- <li *ngFor="let db of databases" class="nav-item active">
+        <li *ngFor="let db of databases" class="nav-item active">
           <a class="nav-link" href="#"><i class="fa fa-database" aria-hidden="true"></i>
-            <span class="text">{{db}}</span>
+            <span class="text1">{{db}}</span>
           </a>
-        </li> -->
+        </li>
 
-        <!-- <li class="nav-item active">
-          <a data-toggle="collapse" href="#multiCollapseExample1" aria-expanded="true" (click)="toggle(pass)"
-            aria-controls="multiCollapseExample1"><i class="fa fa-database" aria-hidden="true"></i><i class="fa"
-            style="font-size: 10px; color: black"  [ngClass]="{'fa-minus fa-xs': visible, 'fa-plus fa-xs': !visible}" aria-hidden="true"></i>
-            <span class="sb-text">POSTGRE SQL</span></a>
-          <div class="collapse multi-collapse" id="multiCollapseExample1">
-            <a href="#"><span class="sb-expansion-data"> DATABASE 1</span></a> <br>
-            <a href="#"><span class="sb-expansion-data"> DATABASE 2</span></a> <br>
-            <a href="#"><span class="sb-expansion-data"> DATABASE 3</span></a>
+        <li class="nav-item active">
+          <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="tables" [cdkDropListConnectedTo]="[doneList,container2List]"
+            class="example-list" (cdkDropListDropped)="drop($event)">
+            <a data-toggle="collapse" href="#multiCollapseExample1" aria-expanded="true" (click)="toggle(pass)"
+              aria-controls="multiCollapseExample1"><i class="fa fa-database" aria-hidden="true"></i><i class="fa"
+                style="font-size: 10px; color: black" [ngClass]="{'fa-minus fa-xs': visible, 'fa-plus fa-xs': !visible}"
+                aria-hidden="true"></i>
+              <span class="sb-text">MYSQL</span></a>
+            <div class="collapse multi-collapse" id="multiCollapseExample1">
+              <div class="example-box1" *ngFor="let item of tables" cdkDrag>
+               <span class="text">{{item.name}}</span> 
+              </div>
+
+            </div>
           </div>
-
-        </li> -->
-        <!-- <li class="nav-item active">
+        </li>
+        <!-- <li class="nav-item active" *ngFor="let db of database">
           <a data-toggle="collapse" href="#multiCollapseExample2" aria-expanded="true" (click)="toggleIcon()"
             aria-controls="multiCollapseExample1"><i class="fa fa-database" aria-hidden="true"></i>
             <mat-icon class="sb-plus-icon" style="font-size: 12px; color: black">{{icon}}</mat-icon>
-            <span class="sb-text">ORACLE</span>
+            <span class="sb-text">{{db.dbname}}</span>
           </a>
-          <div class="collapse multi-collapse" id="multiCollapseExample2">
-            <a href="#"><span class="sb-expansion-data"> table 1</span></a> <br>
-            <a href="#"><span class="sb-expansion-data"> table 2</span></a> <br>
-            <a href="#"><span class="sb-expansion-data"> table 3</span></a>
+          <div ngFor="let t of db.tables" class="collapse multi-collapse" id="multiCollapseExample2">
+            <a href="#"><span class="sb-expansion-data"> {{db.tbname}}</span></a> <br>
+
           </div>
 
         </li> -->
-        <div *ngFor="let db of databases" cdkDropList #todoList="cdkDropList" [cdkDropListData]="databases" [cdkDropListConnectedTo]="[doneList]"
+
+
+        <!-- <div *ngFor="let db of databases" cdkDropList #todoList="cdkDropList" [cdkDropListData]="databases" [cdkDropListConnectedTo]="[doneList]"
       class="example-list" (cdkDropListDropped)="drop($event)">
       <a data-toggle="collapse" href="#multiCollapseExample2" aria-expanded="true" (click)="toggleIcon()"
             aria-controls="multiCollapseExample1"><i class="fa fa-database" aria-hidden="true"></i>
             <mat-icon class="sb-plus-icon" style="font-size: 12px; color: black">{{icon}}</mat-icon>
-            <span class="sb-text">{{db.name}}</span>
+            <span class="sb-text">{{db.dbname}}</span>
           </a>
-      <div class="example-box" *ngFor="let item of databases">
-        <div  class="collapse multi-collapse" id="multiCollapseExample2" *ngFor="let i of item.tables" cdkDrag>
-            <span class="sb-expansion-data"> {{i.name}}</span>
+      <div class="example-box">
+        <div  class="collapse multi-collapse" id="multiCollapseExample2" [cdkDragData]="i" cdkDrag>
+            <li> {{db.tables}}  </li>
         </div>
       </div>
-    </div>
+    </div> -->
 
-
-        <!-- <li class="nav-item active" *ngFor="let db of databases">
-          <a data-toggle="collapse" href="#multiCollapseExample2" aria-expanded="true" (click)="toggleIcon()"
-            aria-controls="multiCollapseExample1"><i class="fa fa-database" aria-hidden="true"></i>
-            <mat-icon class="sb-plus-icon" style="font-size: 12px; color: black">{{icon}}</mat-icon>
-            <span class="sb-text">{{db.name}}</span>
-          </a>
-
-          <div class="collapse multi-collapse" id="multiCollapseExample2" *ngFor="let d of db.tables">
-            <a href="#"><span class="sb-expansion-data"> {{d.name}}</span></a>
-          </div>
-
-        </li> -->
       </ul>
     </section>
 
   </mat-sidenav>
   <mat-sidenav-content>
+
+    <!-- <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="databases" [cdkDropListConnectedTo]="[doneList]"
+      class="example-list" (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of databases" >
+<div *ngFor="let i of item.tables" cdkDrag>{{i.tbname}}</div>      </div>
+    </div> -->
     <!-- <div class="example-container">
-      <h2>To do</h2>
-    
-      <div
-        cdkDropList
-        #todoList="cdkDropList"
-        [cdkDropListData]="databases"
-        [cdkDropListConnectedTo]="[doneList]"
-        class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of databases" cdkDrag>{{item.name}}</div>
+      <h2>Done</h2> -->
+
+      <!-- <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList]"
+        class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of done" cdkDrag> 
+          {{item.columns}} </div>
       </div>
     </div> -->
-    <div cdkDropList 
-    #todoList="cdkDropList" 
-    [cdkDropListData]="databases" 
-    [cdkDropListConnectedTo]="[doneList]"
-    class="example-list" 
-    (cdkDropListDropped)="drop($event)">
-      <div class="example-box" *ngFor="let item of databases">
-        <div *ngFor="let i of item.tables" cdkDrag>
-          {{i.name}}
-        </div>
-      </div>
-    </div>
-    <div class="example-container">
-      <h2>Done</h2>
 
-      <div cdkDropList 
-      #doneList="cdkDropList" 
-      [cdkDropListData]="done" 
-      [cdkDropListConnectedTo]="[todoList]"
-      class="example-list" 
-      (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of done">
-          <div *ngFor="let i of item.tables" cdkDrag>{{i.columns}}</div> 
-        </div>
+    
+  <div class="example-container">
+    <h2>table 1 columns</h2>
+
+    <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" [cdkDropListConnectedTo]="[todoList]"
+      class="example-list" (cdkDropListDropped)="drop($event)" cdkDragDisabled>
+      <div class="example-box" *ngFor="let item of done" >
+      <div class="example-box" *ngFor="let t of item.columns" >{{t}}</div>  
       </div>
     </div>
+  </div>
+  <div class="example-container">
+    <h2>table 2 columns</h2>
+  <div cdkDropList #container2List="cdkDropList" [cdkDropListData]="container2" [cdkDropListConnectedTo]="[todoList]"
+  class="example-list" (cdkDropListDropped)="drop($event)" cdkDragDisabled>
+  <div class="example-box" *ngFor="let item of container2" >
+    <div class="example-box" *ngFor="let c of item.columns">{{c}}</div>
+  </div>
+</div>
+</div>
   </mat-sidenav-content>
 </mat-sidenav-container>
