@@ -18,7 +18,7 @@
  
  .tb-platform{
     border: 13px;
-    color: #FFFFFF;
+    color:#FFFFFF;
     margin-left: 20px;
  }
  .tb-ril-logo{
@@ -50,11 +50,49 @@ height: 55px;
     background-color: aliceblue
  } */
 
+.sb-box{
+   height: 400px;
+   width: 300px;
+   border: 1px solid black;
+   margin-left: 30px;
+   margin-top: 20px;
+}
+.btn{
+   margin-left: 120px
+}
+.body-box{
+   height: 400px;
+   width: 900px;
+   border: 1px solid black;
+   margin-top: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  .text1{
     margin-left: 10px
  }
 .text{
-   margin-left: 30px;
+   margin-left: 60px;
    color: blue;
 } 
 /* .sb-menu{
@@ -67,7 +105,7 @@ height: 55px;
 }
 
 .fa{
-   margin-left: 10px;
+   margin-left: 20px;
 }
 
 .sb-text{
@@ -82,11 +120,21 @@ margin-left: 10px
 .example-container {
    width: 200px;
    max-width: 100%;
-   margin: 0 25px 25px 0;
+   /* margin: 0 25px 25px 0; */
    display: inline-block;
    vertical-align: top;
+   margin-left: 170px;
+   margin-top: 15px;
  }
  
+ .example-list1 {
+   /* border: solid 1px #ccc; */
+   min-height: 60px;
+   background: #eee;
+   border-radius: 4px;
+   /* overflow: hidden; */
+   /* display:  inline-flexbox; */
+ }
  .example-list {
    /* border: solid 1px #ccc; */
    min-height: 60px;
@@ -133,3 +181,6 @@ margin-left: 10px
  .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
  }
+
+
+ 

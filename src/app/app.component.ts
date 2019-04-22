@@ -12,7 +12,7 @@ export class AppComponent {
   public databases = ['POSTGRESQL', 'MONGODB', 'FIREBASE']
   visible = false;
   // visible1 = false;
-
+public show:boolean=false;
   public icon = 'add';
 
   public toggleIcon() {
@@ -27,11 +27,11 @@ export class AppComponent {
   }
   //for drag and drop
   tables = [
-    { name: 'Employee', columns: ['empId', 'empName', 'salary'] },
-    { name: 'Department', columns: ['deptId', 'deptName', 'totalNum'] }
+    { name: 'Employee', columns: ['employeeId', 'employeeName', 'salary'] },
+    { name: 'Department', columns: ['departmentId', 'departmentName','totalNums'] },
+    // { name: 'Table 3', columns: ['Field 1', 'Field 2'] }
   ]
-  //  Employee=['empId','empName','salary']
-  //  Department=['deptId','deptName','totalNum']
+  
   todo = [
     'Get to work',
     'Pick up groceries',
@@ -41,15 +41,33 @@ export class AppComponent {
   done = [];
   container2 = [];
   drop(event: CdkDragDrop<string[]>) {
+    if(this.done.length<1 ){
     if (event.previousContainer === event.container) {
+      // this.show=true;
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
+      // this.show=false;
       copyArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex);
     }
   }
+  }
 
+  drop1(event: CdkDragDrop<string[]>) {
+    if( this.container2.length<1 ){
+    if (event.previousContainer === event.container) {
+      // this.show=true;
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      // this.show=false;
+      copyArrayItem(event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex);
+    }
+  }
+  }
 }
 
